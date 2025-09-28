@@ -84,9 +84,11 @@ The website will be available at: http://localhost:8000
 - Grey: Letter not in word
   
 **Maximum 5 guesses per game.**
+
 **Admins can login to view reports but cannot play games.**
 
 
 # Author
 **Nukala Srimanth Reddy**
+
 **GitHub: https://github.com/nukalasrimanthreddy**
