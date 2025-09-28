@@ -65,6 +65,7 @@ python manage.py runserver
 The website will be available at: http://localhost:8000
 # Notes
 **Ensure you have an active internet connection because the app uses a MongoDB database hosted on MongoDB Atlas.**
+
 **If you have MongoDB installed locally, update the connection string in settings.py to use your local database instead.**
 ## MongoDB Collections
 **users** – Stores user credentials and type (player/admin)
