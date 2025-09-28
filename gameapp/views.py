@@ -110,9 +110,14 @@ def start_game(request):
 
 def game_view(request):
     username = request.session.get("username")
+    if not username:
+        return redirect('login')
+    if request.session.get("user_type") == "admin":
+        messages.error(request, "Admins cannot play.")
+        return redirect("home")
     game_id = request.session.get("game_id")
-    if not username or not game_id:
-        return redirect("login")
+    if not game_id:
+        return redirect("start_game")
     game = games_col.find_one({"_id": ObjectId(game_id)})
     if not game:
         return redirect("start_game")
