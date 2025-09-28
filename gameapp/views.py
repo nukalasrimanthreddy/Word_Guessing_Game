@@ -60,6 +60,7 @@ def home(request):
     if not username:
         return redirect("login")
     user = users_col.find_one({"username": username})
+    request.session.pop("game_id", None)
     limit_reached = request.session.pop('limit_reached', False)
     today = datetime.datetime.now().date()
     games_played_today = games_col.count_documents({
