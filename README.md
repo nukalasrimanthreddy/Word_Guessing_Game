@@ -68,21 +68,23 @@ The website will be available at: http://localhost:8000
 
 **If you have MongoDB installed locally, update the connection string in settings.py to use your local database instead.**
 ## MongoDB Collections
-**users** – Stores user credentials and type (player/admin)
-**words** – Stores the list of words for the game
-**games** – Stores active and completed game records
-**guesses** – Stores all guesses submitted by players
+- **users** – Stores user credentials and type (player/admin)
+- **words** – Stores the list of words for the game
+- **games** – Stores active and completed game records
+- **guesses** – Stores all guesses submitted by players
 ## How to Play
 - Register as a player.
 - Login to start playing.
 - Click "Start Game" to get a random word.
 - Enter your guesses in the input box (5-letter words).
+  
 **Feedback colors:**
 - Green: Correct letter in correct position
 - Orange: Correct letter in wrong position
 - Grey: Letter not in word
+  
 **Maximum 5 guesses per game.**
-Admins can login to view reports but cannot play games.
+**Admins can login to view reports but cannot play games.**
 
 
 # Author
