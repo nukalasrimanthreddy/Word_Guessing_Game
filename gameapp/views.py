@@ -135,6 +135,12 @@ def game_view(request):
 
 
 def submit_guess(request):
+    if request.method != "POST":
+        if request.session.get("game_id",None):
+            return redirect("game_view")
+        else:
+            messages.error(request, "Start Game to Submit Guesses")
+            return redirect("home")
     if request.session.get('user_type') == 'admin':
         messages.error(request, "Admins cannot play.")
         return redirect("home")
@@ -143,7 +149,8 @@ def submit_guess(request):
         return redirect("login")
     game_id = request.session.get('game_id')
     if not game_id:
-        return redirect("start_game")
+        messages.error(request, "No active game. Start a game first.")
+        return redirect("home")
     game = games_col.find_one({"_id": ObjectId(game_id)})
     if not game or game.get("completed"):
         return redirect("home")
@@ -183,8 +190,6 @@ def submit_guess(request):
         else:
             request.session['game_status'] = {"congrats": False, "fail": False, "target_word": None}
         return redirect("game_view")
-
-    return redirect("start_game")
 
 
 
