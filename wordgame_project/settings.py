@@ -81,11 +81,8 @@ WSGI_APPLICATION = 'wordgame_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'wordgame_app_db',
-        'CLIENT': {
-            'host': MONGO_URI
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
