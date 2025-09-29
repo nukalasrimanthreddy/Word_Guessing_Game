@@ -35,13 +35,22 @@ A web-based Word Guessing Game built with **Django** and **MongoDB**. Players ca
 git clone https://github.com/nukalasrimanthreddy/Word_Guessing_Game.git
 cd Word_Guessing_Game
 ```
+
 ### 2. Or Download the ZIP
 Extract the ZIP and navigate to the project folder.
-### 3. Setup Virtual Environment
+
+### 3. Create `.env` File  
+Inside the project root, create a file named `.env` and add your MongoDB connection string:  
+```env
+MONGO_URI=your_mongodb_connection_string
+```
+
+### 4. Setup Virtual Environment
 ```bash
 python -m venv venv
 ```
-### 4. Activate Virtual Environment
+
+### 5. Activate Virtual Environment
 Windows:
 ```bash
 venv\Scripts\activate
@@ -50,28 +59,36 @@ Mac/Linux:
 ```bash
 source venv/bin/activate
 ```
-### 5. Install Dependencies
+
+### 6. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
-### 6. Run Django Migrations
-```bash
-python manage.py migrate
-```
+
 ### 7. Start the Server
 ```bash
 python manage.py runserver
 ```
+
 The website will be available at: http://localhost:8000
-# Notes
+
+---
+
+## Notes
 **Ensure you have an active internet connection because the app uses a MongoDB database hosted on MongoDB Atlas.**
 
-**If you have MongoDB installed locally, update the connection string in settings.py to use your local database instead.**
+**If you have MongoDB installed locally, update the `.env` file with your local connection string.**
+
+---
+
 ## MongoDB Collections
 - **users** – Stores user credentials and type (player/admin)
 - **words** – Stores the list of words for the game
 - **games** – Stores active and completed game records
 - **guesses** – Stores all guesses submitted by players
+
+---
+
 ## How to Play
 - Register as a player.
 - Login to start playing.
@@ -87,8 +104,9 @@ The website will be available at: http://localhost:8000
 
 **Admins can login to view reports but cannot play games.**
 
+---
 
-# Author
-**Nukala Srimanth Reddy**
+## Author
+**Nukala Srimanth Reddy**  
 
 **GitHub: https://github.com/nukalasrimanthreddy**
