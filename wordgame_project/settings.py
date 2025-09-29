@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,7 +44,7 @@ INSTALLED_APPS = [
     'gameapp',
 ]
 
-MONGO_URI = "mongodb+srv://opentext:opentext@cluster0.bxnjrgj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URI = os.getenv("MONGO_URI")
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
