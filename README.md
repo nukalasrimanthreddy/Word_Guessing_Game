@@ -39,10 +39,10 @@ cd Word_Guessing_Game
 ### 2. Or Download the ZIP
 Extract the ZIP and navigate to the project folder.
 
-### 3. Create `.env` File  
-Inside the project root, create a file named `.env` and add your MongoDB connection string:  
-```env
-MONGO_URI=your_mongodb_connection_string
+### 3. Add `.env` File
+Create a `.env` file in the project root with your MongoDB connection string:
+```
+MONGO_URI=your_mongodb_connection_string_here
 ```
 
 ### 4. Setup Virtual Environment
@@ -65,11 +65,15 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 7. Start the Server
+### 7. Run Django Migrations
+```bash
+python manage.py migrate
+```
+
+### 8. Start the Server
 ```bash
 python manage.py runserver
 ```
-
 The website will be available at: http://localhost:8000
 
 ---
@@ -77,36 +81,36 @@ The website will be available at: http://localhost:8000
 ## Notes
 **Ensure you have an active internet connection because the app uses a MongoDB database hosted on MongoDB Atlas.**
 
-**If you have MongoDB installed locally, update the `.env` file with your local connection string.**
+**If you have MongoDB installed locally, update the connection string in the `.env` file to use your local database instead.**
 
 ---
 
 ## MongoDB Collections
-- **users** – Stores user credentials and type (player/admin)
-- **words** – Stores the list of words for the game
-- **games** – Stores active and completed game records
-- **guesses** – Stores all guesses submitted by players
+- **users** – Stores user credentials and type (player/admin)  
+- **words** – Stores the list of words for the game  
+- **games** – Stores active and completed game records  
+- **guesses** – Stores all guesses submitted by players  
 
 ---
 
 ## How to Play
-- Register as a player.
-- Login to start playing.
-- Click "Start Game" to get a random word.
-- Enter your guesses in the input box (5-letter words).
-  
+- Register as a player.  
+- Login to start playing.  
+- Click "Start Game" to get a random word.  
+- Enter your guesses in the input box (5-letter words).  
+
 **Feedback colors:**
-- Green: Correct letter in correct position
-- Orange: Correct letter in wrong position
-- Grey: Letter not in word
-  
-**Maximum 5 guesses per game.**
+- Green: Correct letter in correct position  
+- Orange: Correct letter in wrong position  
+- Grey: Letter not in word  
+
+**Maximum 5 guesses per game.**  
 
 **Admins can login to view reports but cannot play games.**
 
 ---
 
-## Author
+# Author
 **Nukala Srimanth Reddy**  
 
 **GitHub: https://github.com/nukalasrimanthreddy**
